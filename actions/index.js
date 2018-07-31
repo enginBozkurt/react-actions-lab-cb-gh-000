@@ -2,9 +2,9 @@
 
 function addColumn (ev) {
   ev.preventDefault();
-  
+
   const updatedTable = this.state.table.map(row => [...row, '']);
-  
+
   this.setState({
     table: updatedTable
   });
@@ -13,7 +13,7 @@ function addColumn (ev) {
 
 function addRow (ev) {
   ev.preventDefault();
-  
+
   this.setState({
     table: [...this.state.table, this.state.table[0].map(() => '')]
   });
@@ -24,7 +24,7 @@ function changeCell (rowIndex, columnIndex, ev) {
   updatedRow[columnIndex] = ev.target.value;
   const updatedTable = [...this.state.table];
   updatedTable[rowIndex] = updatedRow;
-  
+
   this.setState({
     table: updatedTable
   });
@@ -56,15 +56,15 @@ function removeRow (ev) {
 
 function removeColumn (ev) {
   ev.preventDefault();
-  
+
   if(this.state.table[0].length > 1) {
     const updatedTable = this.state.table.map(row => row.slice(0, -1));
- 
-  
+
+
     this.setState({
       table: updatedTable
     });
-  } 
+  }
 }
 
 export default {
