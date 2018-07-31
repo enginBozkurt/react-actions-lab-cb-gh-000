@@ -6,11 +6,11 @@ import Row from './Row';
 export default class Table extends React.Component {
   render () {
     return(
-      <table className="table" 
+      <table className="table"
               onBlur={this.props.onBlur}>
         <tbody>
         {
-          this.props.table.map((row, rowIndex) => 
+          this.props.table.map((row, rowIndex) =>
             <Row key={rowIndex}
                  row={row}
                  onFocus={this.props.onFocus.bind(null, rowIndex)}
